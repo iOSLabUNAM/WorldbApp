@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum CodableStorage {
+enum CodableStorage<T> where T: Codable {
     case permanent(filename: String)
     case cache
     
@@ -20,33 +20,29 @@ enum CodableStorage {
             filePath.appendPathComponent(filename)
             return filePath
         default:
-            print("Unaviable storage")
             return nil
         }
     }
     
-    func load() -> [Country]? {
+    func load() -> T? {
         switch self {
         case .permanent(_):
-            if let data = try? Data(contentsOf: self.filePath!) {
-              return try? JSONDecoder().decode([Country].self, from: data)
-            }
+            guard let data = try? Data(contentsOf: self.filePath!) else { return nil }
+            return try? JSONDecoder().decode(T.self, from: data)
         default:
-            print("Unaviable")
+            print("Unable to load filepath: \(String(describing: self.filePath))")
+            return nil
         }
-        return nil
     }
     
-    func save(data dataSource: [Country]) {
+    func save(data dataSource: T) {
         switch self {
         case .permanent(_):
             if let data = try? JSONEncoder().encode(dataSource) {
                 try? data.write(to: self.filePath!)
             }
         default:
-            print("Unaviable storage")
+            print("Unaviable save storage")
         }
     }
-    
-    
 }

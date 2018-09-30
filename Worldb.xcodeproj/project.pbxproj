@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		304CC28D215FCA58006FFF80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304CC28C215FCA58006FFF80 /* AppDelegate.swift */; };
 		304CC28F215FCA58006FFF80 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304CC28E215FCA58006FFF80 /* MasterViewController.swift */; };
-		304CC291215FCA58006FFF80 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304CC290215FCA58006FFF80 /* DetailViewController.swift */; };
+		304CC291215FCA58006FFF80 /* CountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304CC290215FCA58006FFF80 /* CountryViewController.swift */; };
 		304CC294215FCA58006FFF80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 304CC292215FCA58006FFF80 /* Main.storyboard */; };
 		304CC296215FCA59006FFF80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 304CC295215FCA59006FFF80 /* Assets.xcassets */; };
 		304CC299215FCA59006FFF80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 304CC297215FCA59006FFF80 /* LaunchScreen.storyboard */; };
@@ -42,7 +42,7 @@
 		304CC289215FCA58006FFF80 /* Worldb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Worldb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		304CC28C215FCA58006FFF80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		304CC28E215FCA58006FFF80 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		304CC290215FCA58006FFF80 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		304CC290215FCA58006FFF80 /* CountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewController.swift; sourceTree = "<group>"; };
 		304CC293215FCA58006FFF80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		304CC295215FCA59006FFF80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		304CC298215FCA59006FFF80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -138,7 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				304CC28E215FCA58006FFF80 /* MasterViewController.swift */,
-				304CC290215FCA58006FFF80 /* DetailViewController.swift */,
+				304CC290215FCA58006FFF80 /* CountryViewController.swift */,
 				304CC2B2215FD791006FFF80 /* SettingsViewController.swift */,
 				304CC2B4215FDE29006FFF80 /* MainBarController.swift */,
 			);
@@ -356,7 +356,7 @@
 				304CC2C1215FF87C006FFF80 /* CountryService.swift in Sources */,
 				304CC2BA215FEA6D006FFF80 /* Secrets.swift in Sources */,
 				304CC2B8215FDFE4006FFF80 /* StorageType.swift in Sources */,
-				304CC291215FCA58006FFF80 /* DetailViewController.swift in Sources */,
+				304CC291215FCA58006FFF80 /* CountryViewController.swift in Sources */,
 				304CC2B1215FD0FD006FFF80 /* UIColor+Theme.swift in Sources */,
 				304CC28F215FCA58006FFF80 /* MasterViewController.swift in Sources */,
 				304CC2B3215FD791006FFF80 /* SettingsViewController.swift in Sources */,

@@ -60,6 +60,9 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="kXM-fs-5Vm" kind="show" identifier="showCountry" id="8NU-uF-5BS"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -73,6 +76,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="12" y="-374"/>
+        </scene>
+        <!--Country View Controller-->
+        <scene sceneID="jon-9a-DPg">
+            <objects>
+                <viewController id="kXM-fs-5Vm" customClass="CountryViewController" customModule="Worldb" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BRb-A6-heM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rTy-S0-9YD">
+                                <rect key="frame" x="30" y="89" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="AYE-JZ-g2i"/>
+                                    <constraint firstAttribute="width" constant="64" id="dY0-I2-aoV"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8b-fY-dqj">
+                                <rect key="frame" x="114" y="89" width="231" height="27"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Languages: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZB-rt-kZV">
+                                <rect key="frame" x="114" y="124" width="231" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rTy-S0-9YD" firstAttribute="leading" secondItem="2r2-2W-PZo" secondAttribute="leading" constant="30" id="2SM-aS-7OW"/>
+                            <constraint firstItem="2r2-2W-PZo" firstAttribute="trailing" secondItem="KZB-rt-kZV" secondAttribute="trailing" constant="30" id="5nR-6p-FzW"/>
+                            <constraint firstItem="KZB-rt-kZV" firstAttribute="top" secondItem="g8b-fY-dqj" secondAttribute="bottom" constant="8" id="8Dk-pZ-meN"/>
+                            <constraint firstItem="rTy-S0-9YD" firstAttribute="top" secondItem="2r2-2W-PZo" secondAttribute="top" constant="25" id="RMI-Hw-CTw"/>
+                            <constraint firstItem="g8b-fY-dqj" firstAttribute="leading" secondItem="rTy-S0-9YD" secondAttribute="trailing" constant="20" id="U0e-LF-Qgf"/>
+                            <constraint firstItem="g8b-fY-dqj" firstAttribute="top" secondItem="2r2-2W-PZo" secondAttribute="top" constant="25" id="VgA-Xw-hM2"/>
+                            <constraint firstItem="KZB-rt-kZV" firstAttribute="leading" secondItem="rTy-S0-9YD" secondAttribute="trailing" constant="20" id="gZd-9D-q7L"/>
+                            <constraint firstItem="2r2-2W-PZo" firstAttribute="trailing" secondItem="g8b-fY-dqj" secondAttribute="trailing" constant="30" id="xEg-sr-6on"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2r2-2W-PZo"/>
+                    </view>
+                    <connections>
+                        <outlet property="countryFlag" destination="rTy-S0-9YD" id="FJk-o2-sVa"/>
+                        <outlet property="countryLanguagesLabel" destination="KZB-rt-kZV" id="vZv-xh-Cd7"/>
+                        <outlet property="countryNameLabel" destination="g8b-fY-dqj" id="PhG-Rc-KYQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kx6-A3-eOb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="848.79999999999995" y="-374.66266866566718"/>
         </scene>
         <!--Main Bar Controller-->
         <scene sceneID="ys8-Bv-wF3">

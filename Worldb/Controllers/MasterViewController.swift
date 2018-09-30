@@ -9,44 +9,25 @@
 import UIKit
 
 class MasterViewController: UITableViewController {
-
-    var detailViewController: DetailViewController? = nil
     var objects = [Country]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-//        navigationItem.leftBarButtonItem = editButtonItem
-
-//        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
-//        navigationItem.rightBarButtonItem = addButton
-    
+        loadData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        loadData()
         setTheme()
     }
-
-//    @objc
-//    func insertNewObject(_ sender: Any) {
-//        objects.insert(NSDate(), at: 0)
-//        let indexPath = IndexPath(row: 0, section: 0)
-//        tableView.insertRows(at: [indexPath], with: .automatic)
-//    }
-
     // MARK: - Segues
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showDetail" {
-//            if let indexPath = tableView.indexPathForSelectedRow {
-//                let object = objects[indexPath.row] as! NSDate
-//                let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
-//                controller.detailItem = object
-//                controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
-//                controller.navigationItem.leftItemsSupplementBackButton = true
-//            }
+        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        if segue.identifier == "showCountry" {
+            let object = objects[indexPath.row]
+            let controller = segue.destination as! CountryViewController
+            controller.country = object
         }
     }
 
@@ -69,20 +50,6 @@ class MasterViewController: UITableViewController {
         return cell
     }
 
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-
-//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            objects.remove(at: indexPath.row)
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-//        } else if editingStyle == .insert {
-//            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-//        }
-//    }
-
     func setTheme()  {
         if UserDefaults.standard.bool(forKey: "nightTheme"){
             self.navigationController?.navigationBar.barTintColor = UIColor.darkBlue
@@ -100,12 +67,10 @@ class MasterViewController: UITableViewController {
     }
     
     func loadData() {
-        print("loading....")
         CountryService.shared.all { [weak self] countries in
             self?.objects = countries
             self?.tableView.reloadData()
         }
     }
-
 }
 
