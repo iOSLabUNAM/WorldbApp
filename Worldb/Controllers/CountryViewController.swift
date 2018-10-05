@@ -9,9 +9,7 @@
 import UIKit
 
 class CountryViewController: UIViewController {
-    var country: Country? {
-        didSet { loadData() }
-    }
+    var country: Country?
     @IBOutlet weak var countryNameLabel: UILabel!
     @IBOutlet weak var countryLanguagesLabel: UILabel!
     @IBOutlet weak var countryFlag: UIImageView!
