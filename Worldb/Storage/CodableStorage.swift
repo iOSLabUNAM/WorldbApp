@@ -15,7 +15,6 @@ enum CodableStorage<T> where T: Codable {
     var filePath: URL? {
         switch self {
         case .permanent(let filename):
-            StorageType.permanent.ensureExists()
             var filePath = StorageType.permanent.folder
             filePath.appendPathComponent(filename)
             return filePath

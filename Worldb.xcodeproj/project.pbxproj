@@ -23,6 +23,7 @@
 		304CC2BE215FF84F006FFF80 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304CC2BD215FF84E006FFF80 /* Client.swift */; };
 		304CC2C1215FF87C006FFF80 /* CountryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304CC2C0215FF87C006FFF80 /* CountryService.swift */; };
 		304CC2C3215FFD10006FFF80 /* CodableStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304CC2C2215FFD10006FFF80 /* CodableStorage.swift */; };
+		30E6505F2167C45100B5EAE5 /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E6505E2167C45000B5EAE5 /* ImageStore.swift */; };
 		9F611A7DC70DDFC53FB51E65 /* Pods_WorldbTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 933C4EC939D5FD8201466699 /* Pods_WorldbTests.framework */; };
 		C22090B239476A1DFDAA1A77 /* Pods_Worldb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A5D28F231C66935D5841BE /* Pods_Worldb.framework */; };
 /* End PBXBuildFile section */
@@ -59,6 +60,7 @@
 		304CC2BD215FF84E006FFF80 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		304CC2C0215FF87C006FFF80 /* CountryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryService.swift; sourceTree = "<group>"; };
 		304CC2C2215FFD10006FFF80 /* CodableStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableStorage.swift; sourceTree = "<group>"; };
+		30E6505E2167C45000B5EAE5 /* ImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
 		382761B6DF8EACE7FD9A3CB5 /* Pods-WorldbTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorldbTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WorldbTests/Pods-WorldbTests.debug.xcconfig"; sourceTree = "<group>"; };
 		518E002B7DE5AA90D2E42043 /* Pods-WorldbTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorldbTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WorldbTests/Pods-WorldbTests.release.xcconfig"; sourceTree = "<group>"; };
 		933C4EC939D5FD8201466699 /* Pods_WorldbTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorldbTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +160,7 @@
 			children = (
 				304CC2B7215FDFE4006FFF80 /* StorageType.swift */,
 				304CC2C2215FFD10006FFF80 /* CodableStorage.swift */,
+				30E6505E2167C45000B5EAE5 /* ImageStore.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				304CC291215FCA58006FFF80 /* CountryViewController.swift in Sources */,
 				304CC2B1215FD0FD006FFF80 /* UIColor+Theme.swift in Sources */,
 				304CC28F215FCA58006FFF80 /* MasterViewController.swift in Sources */,
+				30E6505F2167C45100B5EAE5 /* ImageStore.swift in Sources */,
 				304CC2B3215FD791006FFF80 /* SettingsViewController.swift in Sources */,
 				304CC2BE215FF84F006FFF80 /* Client.swift in Sources */,
 				304CC2C3215FFD10006FFF80 /* CodableStorage.swift in Sources */,
