@@ -10,10 +10,13 @@ import UIKit
 
 class MasterViewController: UITableViewController {
     var objects = [Country]()
+    var filteredObjects = [Country]()
+    let searchController = UISearchController(searchResultsController: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
+        setupSearchController()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -25,7 +28,7 @@ class MasterViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = tableView.indexPathForSelectedRow else { return }
         if segue.identifier == "showCountry" {
-            let object = objects[indexPath.row]
+            let object = fetchObjectAt(row: indexPath.row)
             let controller = segue.destination as! CountryViewController
             controller.country = object
         }
@@ -38,15 +41,22 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isFiltering() {
+            return filteredObjects.count
+        }
         return objects.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-        let object = objects[indexPath.row]
+        let object = fetchObjectAt(row: indexPath.row)
         cell.textLabel?.text = object.name
         cell.detailTextLabel?.text = object.iso
+        
+        object.flagImage { [weak cell] (img) in
+            cell?.imageView?.image = img
+        }
         return cell
     }
 
@@ -72,5 +82,45 @@ class MasterViewController: UITableViewController {
             self?.tableView.reloadData()
         }
     }
+    
+    func setupSearchController() {
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.backgroundColor = .clear
+        
+        searchController.searchBar.placeholder = "Search Country"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+    }
+    
+    func fetchObjectAt(row: Int) -> Country {
+        if isFiltering() {
+            return filteredObjects[row]
+        } else {
+            return objects[row]
+        }
+    }
+
+    func isFiltering() -> Bool {
+        return searchController.isActive && !searchBarIsEmpty()
+    }
 }
 
+extension MasterViewController: UISearchResultsUpdating {
+    func searchBarIsEmpty() -> Bool {
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
+        filteredObjects = objects.filter({ country -> Bool in
+            return country.name.lowercased().contains(searchText.lowercased())
+        })
+        tableView.reloadData()
+    }
+    
+    // MARK: - UISearchResultsUpdating Delegate
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
+    }
+
+}
